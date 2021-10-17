@@ -29,4 +29,9 @@ class StringCalculatorShould {
     	StringCalculator stringcalculator=new StringCalculator();
     	assertEquals(10, stringcalculator.add("1,2,3,4"));
     }
+    @Test
+    void string_with_new_lines_between_numbers_should_return_sum_as_int(){
+    	StringCalculator stringcalculator=new StringCalculator();
+    	assertEquals(10, stringcalculator.add("1\n,2,3\n,4\n"));
+    }
 }

@@ -6,6 +6,7 @@ class StringCalculator {
 
     public int add(String input) {
     	int result=0;
+    	input=input.replaceAll("\n", "");
     	String[] arr=input.split(",");
     	if(input=="")
     		return 0;
