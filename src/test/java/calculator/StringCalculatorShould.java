@@ -20,7 +20,13 @@ class StringCalculatorShould {
     
     @Test
     void string_with_two_numbers_should_return_sum_as_int() {
-    StringCalculator stringcalculator=new StringCalculator();
-    assertEquals(3, stringcalculator.add("1,2"));
+    	StringCalculator stringcalculator=new StringCalculator();
+    	assertEquals(3, stringcalculator.add("1,2"));
+    }
+    
+    @Test
+    void string_with_unknown_amount_numbers_should_return_sum_as_int(){
+    	StringCalculator stringcalculator=new StringCalculator();
+    	assertEquals(10, stringcalculator.add("1,2,3,4"));
     }
 }
