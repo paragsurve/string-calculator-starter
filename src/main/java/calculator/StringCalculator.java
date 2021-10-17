@@ -21,10 +21,12 @@ class StringCalculator {
     	input=input.replaceAll("\n", "");
     	String[] arr=input.split(del);
     	Stack<Integer> stk=new Stack<Integer>();
-    	for(String str : arr) {
-			if(Integer.parseInt(str)<0) {
-				stk.push(Integer.parseInt(str));
+    	for(int i=0;i<arr.length;i++) {
+			if(Integer.parseInt(arr[i])<0) {
+				stk.push(Integer.parseInt(arr[i]));
 			}
+			if(Integer.parseInt(arr[i])>1000)
+				arr[i]="0";
 		}
     	if(!stk.isEmpty())
     		throw new NegativeNotAllowedException("Negative Not Allowed "+stk.toString());
@@ -33,7 +35,6 @@ class StringCalculator {
     		return result;
     	}
     	else if(arr.length==2) {
-    		System.out.println(Arrays.toString(arr));
     		result=Integer.parseInt(arr[0])+Integer.parseInt(arr[1]);
     		return result;
     	}

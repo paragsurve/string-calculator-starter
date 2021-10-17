@@ -39,6 +39,16 @@ class StringCalculatorShould {
 			System.out.println(e.getMessage());
 		}
     }
+    @Test
+    void string_with_numbers_greater_than_1000_should_return_sum_as_int() {
+    	StringCalculator stringcalculator=new StringCalculator();
+    	try {
+			assertEquals(2, stringcalculator.add("1002,2"));
+		} catch (NegativeNotAllowedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+    }
     
     @Test
     void string_with_unknown_amount_numbers_should_return_sum_as_int(){
