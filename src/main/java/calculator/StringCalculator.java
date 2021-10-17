@@ -6,11 +6,20 @@ class StringCalculator {
 
     public int add(String input) {
     	int result=0;
+    	String del=null;
+    	if(input.contains("//")) {
+    		del=String.valueOf(input.charAt(2));
+    		input=input.substring(3);
+    	}
+    	else {
+    		del=String.valueOf(",");
+    	}
+    	input=input.replaceAll("/", "");
     	input=input.replaceAll("\n", "");
-    	String[] arr=input.split(",");
-    	if(input=="")
+    	String[] arr=input.split(del);
+    	if(input.length()==0)
     		return 0;
-    	if(arr.length==1) {
+    	else if(arr.length==1) {
     		result=Integer.parseInt(arr[0]);
     		return result;
     	}

@@ -34,4 +34,9 @@ class StringCalculatorShould {
     	StringCalculator stringcalculator=new StringCalculator();
     	assertEquals(10, stringcalculator.add("1\n,2,3\n,4\n"));
     }
+    @Test
+    void string_with_changed_delimiter_between_numbers_should_return_sum_as_int(){
+    	StringCalculator stringcalculator=new StringCalculator();
+    	assertEquals(3, stringcalculator.add("//;\n1;2"));
+    }
 }
